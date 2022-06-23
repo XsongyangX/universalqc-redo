@@ -1,8 +1,8 @@
 <template>
   <!-- Large nav for desktop -->
-  <nav class="desktop-only">
+  <nav>
     <ul>
-      <li style="margin-left: 0">
+      <li style="margin-left: 0" id="logo">
         <figure>
           <img :src="require('@/assets/images/layout/logo.png')" alt="Logo of the Universal Party">
         </figure>
@@ -32,8 +32,8 @@
           <h1>About</h1>
         </router-link>
       </li>
-      <li>
-        <h1>Lang</h1>
+      <li id="language-droplist">
+        <LanguageSwitcher></LanguageSwitcher>
       </li>
     </ul>
   </nav>
@@ -44,7 +44,7 @@
   text-decoration: none;
 }
 
-nav.desktop-only {
+nav {
 
   // display only when on desktop
   @media only screen and (max-width: 796px) {
@@ -55,61 +55,79 @@ nav.desktop-only {
   position: fixed;
   width: 100%;
   height: 60px;
-  overflow: hidden;
+  // overflow: hidden;
   margin: 0;
   left: 0;
   top: 0;
 
   background: #FFFFFF;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 
-  ul {
-    padding: 0;
-    margin: 0;
-    // no bullet
-    list-style-type: none;
+ul {
+  padding: 0;
+  margin: 0;
+  // no bullet
+  list-style-type: none;
 
-    // center the list elements
-    display: flex;
-  }
+  // center the list elements
+  display: flex;
+}
 
+li {
   // horizontal
-  li {
-    float: left;
+  float: left;
 
-    // center the list elements
-    margin: auto;
-  }
+  // center the list elements
+  margin: auto;
 
-  // font for the links
+  // animation
+  transition: 0.3s;
+}
+
+// font for the links
+h1 {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 49px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+
+  // center the text
+  margin: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  // animation
+  transition: 0.3s;
+}
+
+figure {
+  // center the logo
+  margin: auto;
+}
+
+li:hover:not(#language-droplist):not(#logo) {
+  background-color: #7733DE;
+
   h1 {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 49px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-    color: #000000;
-
-    margin: auto;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  figure {
-    margin: auto;
+    color: white;
   }
 }
 </style>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+import LanguageSwitcher from './LanguageSwitcher.vue';
 
 @Options({
   components: {
+    LanguageSwitcher
   },
 })
 export default class NavigationBar extends Vue { }
