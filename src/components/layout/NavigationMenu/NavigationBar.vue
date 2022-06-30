@@ -3,9 +3,7 @@
   <nav>
     <ul>
       <li style="margin-left: 0" id="logo">
-        <figure>
-          <img :src="require('@/assets/images/layout/logo.png')" alt="Logo of the Universal Party">
-        </figure>
+        <img :src="require('@/assets/images/layout/logo.png')" alt="Logo of the Universal Party">
       </li>
       <li>
         <router-link to="/platform" class="no-underscore">
@@ -105,11 +103,6 @@ h1 {
 
   // animation
   transition: 0.3s;
-}
-
-figure {
-  // center the logo
-  margin: auto;
 }
 
 li:hover:not(#language-droplist):not(#logo) {

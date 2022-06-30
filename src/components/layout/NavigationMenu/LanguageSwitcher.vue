@@ -24,6 +24,9 @@ ul {
   // no bullet
   list-style-type: none;
   padding: 0;
+
+  // stay close to prompt
+  margin: 0;
 }
 
 /* Show the dropdown menu on hover */
