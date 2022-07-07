@@ -3,7 +3,8 @@
   <nav>
     <ul>
       <li style="margin-left: 0" id="logo">
-        <img :src="require('@/assets/images/layout/logo.png')" alt="Logo of the Universal Party">
+        <router-link to="/"><img :src="require('@/assets/images/layout/logo.png')" alt="Logo of the Universal Party">
+        </router-link>
       </li>
       <li>
         <router-link to="/platform" class="no-underscore">
@@ -35,6 +36,8 @@
       </li>
     </ul>
   </nav>
+
+
 </template>
 
 <style scoped lang="scss">

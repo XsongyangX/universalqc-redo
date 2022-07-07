@@ -1,7 +1,13 @@
 <template>
+  <!-- Large screens -->
   <NavigationBar></NavigationBar>
+
+  <!-- Small screens -->
   <NavigationAside></NavigationAside>
 </template>
+
+<style lang="scss" scoped>
+</style>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
